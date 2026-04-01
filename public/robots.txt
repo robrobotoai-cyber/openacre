@@ -1,0 +1,19 @@
+# Allow all crawlers, including AI crawlers
+User-agent: *
+Allow: /
+
+# Specific AI crawler directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap
+Sitemap: https://openacre.co/sitemap.xml

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Open Acre License Verifier — Embed Code</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f5f5f5;
+      color: #333;
+    }
+    h1 { font-size: 28px; margin-bottom: 10px; }
+    .description { font-size: 16px; line-height: 1.6; color: #666; margin-bottom: 30px; }
+    .code-section {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .code-label { font-size: 12px; font-weight: 600; color: #9b7a42; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+    code {
+      display: block;
+      background: #1c2333;
+      color: #c8a96e;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .copy-btn {
+      background: #9b7a42;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .copy-btn:hover { background: #7a5a2e; }
+    .preview-note {
+      background: #eef4f0;
+      border: 1px solid #b8d8b8;
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #3a6b3f;
+    }
+    .options {
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+    .option { margin-bottom: 10px; }
+    .option strong { color: #1c2333; }
+  </style>
+</head>
+<body>
+
+<h1>Embed the License Verifier Tool</h1>
+<p class="description">
+  Copy the code below to embed the Open Acre Contractor License Verifier on your website. The tool is fully responsive and works on all devices.
+</p>
+
+<div class="code-section">
+  <div class="code-label">Basic Embed Code</div>
+  <code>&lt;iframe
+  src="https://openacre.co/tools/license-verifier/embed"
+  width="100%"
+  height="600"
+  frameborder="0"
+  allowtransparency="true"
+  allow="payment"
+&gt;&lt;/iframe&gt;</code>
+  <button class="copy-btn" onclick="copyToClipboard(document.querySelector('code').innerText)">Copy</button>
+
+  <div class="preview-note">
+    <strong>Preview:</strong> Paste this code into your website's HTML editor or page builder. The tool will load and be fully functional immediately.
+  </div>
+
+  <div class="options">
+    <strong>Customize the size:</strong>
+    <div class="option">
+      <strong>width:</strong> Set to <code style="display: inline; padding: 2px 6px; background: #1c2333; color: #c8a96e;">100%</code> for full width, or use a pixel value like <code style="display: inline; padding: 2px 6px; background: #1c2333; color: #c8a96e;">600px</code>
+    </div>
+    <div class="option">
+      <strong>height:</strong> Default is <code style="display: inline; padding: 2px 6px; background: #1c2333; color: #c8a96e;">600px</code>. Adjust based on content length.
+    </div>
+  </div>
+</div>
+
+<div class="code-section">
+  <div class="code-label">Example for Wordpress / Webflow / Squarespace</div>
+  <p style="margin-bottom: 12px; font-size: 14px;">
+    Most website builders support embedding iframes via "Custom Code" or "HTML Embed" blocks. Follow your platform's instructions for adding custom HTML, then paste the code above.
+  </p>
+  <div class="preview-note">
+    <strong>Note:</strong> Some page builders (like Webflow) require you to enable "allow" permissions for <code style="display: inline; padding: 2px 4px; background: #eee;">payment</code> attribute. This is harmless and just gives the iframe permission to function properly.
+  </div>
+</div>
+
+<div class="code-section">
+  <div class="code-label">Responsive Best Practices</div>
+  <div class="options">
+    <div class="option">Set <strong>width="100%"</strong> to make it fill its container.</div>
+    <div class="option">For mobile, you may want to reduce height to <code style="display: inline; padding: 2px 6px; background: #1c2333; color: #c8a96e;">500px</code> or <code style="display: inline; padding: 2px 6px; background: #1c2333; color: #c8a96e;">400px</code> on screens &lt;600px wide.</div>
+    <div class="option">The tool automatically adjusts its layout for mobile — you just need to set the container size.</div>
+  </div>
+</div>
+
+<div class="code-section">
+  <div class="code-label">Questions?</div>
+  <p style="margin: 0; font-size: 14px; color: #666;">
+    Email <strong>hello@openacre.co</strong> if you run into any issues embedding the tool.
+  </p>
+</div>
+
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Code copied to clipboard!');
+  }).catch(err => {
+    console.error('Failed to copy:', err);
+  });
+}
+</script>
+
+</body>
+</html>
