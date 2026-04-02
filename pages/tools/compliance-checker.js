@@ -65,7 +65,13 @@ export default function ComplianceCheckerPage() {
 
       <footer style={{ background: 'var(--midnight)', padding: '28px 44px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ fontFamily: 'Georgia, serif', fontSize: '16px', color: '#e8e4dc' }}>Open <span style={{ color: 'var(--fieldstone)' }}>Acre</span></div>
-        <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: '#4a5568' }}>Property transfer compliance tool · © 2026 Open Acre</div>
+        <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: '#4a5568', display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <span>Property transfer compliance tool · © 2026 Open Acre</span>
+          <div style={{ display: 'flex', gap: '10px', borderLeft: '1px solid #4a5568', paddingLeft: '10px' }}>
+            <a href="/privacy" style={{ color: '#4a5568', textDecoration: 'none' }}>Privacy</a>
+            <a href="/terms" style={{ color: '#4a5568', textDecoration: 'none' }}>Terms</a>
+          </div>
+        </div>
       </footer>
     </>
   )
