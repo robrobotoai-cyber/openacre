@@ -96,12 +96,51 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PLACEHOLDER: Tools CTA */}
-      <div style={{ background: 'var(--parchment)', padding: '48px 44px', textAlign: 'center' }}>
-        <div style={{ fontFamily: 'Georgia, serif', fontSize: '30px', fontWeight: 'normal', color: 'var(--midnight)', marginBottom: '10px' }}>Free septic tools coming this week</div>
-        <p style={{ fontFamily: 'system-ui, sans-serif', fontSize: '15px', color: 'var(--slate)', marginBottom: '32px', maxWidth: '600px', margin: '0 auto' }}>
-          Pump-out calculator, license verifier, and property transfer compliance checker launching soon.
-        </p>
+      {/* TOOLS SECTION */}
+      <div style={{ background: 'var(--white)', borderBottom: '1px solid var(--birch)', padding: '48px 44px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '2px', color: 'var(--prairie)', marginBottom: '12px' }}>
+            FREE TOOLS
+          </div>
+          <div style={{ fontFamily: 'Georgia, serif', fontSize: '30px', fontWeight: 'normal', color: 'var(--midnight)', marginBottom: '10px' }}>
+            Tools to help you manage your septic system.
+          </div>
+          <p style={{ fontFamily: 'system-ui, sans-serif', fontSize: '15px', color: 'var(--slate)', lineHeight: 1.65, marginBottom: '32px', maxWidth: '600px' }}>
+            No signup required. Get instant answers to common septic questions, completely free.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            {/* Tool Card 1: Pump Calculator */}
+            <a href="/tools/pump-calculator" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--midnight)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="13" r="6" stroke="#c8a96e" strokeWidth="1.5"/>
+                    <path d="M12 7 L12 3" stroke="#c8a96e" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M8 4.5 Q12 2 16 4.5" stroke="#c8a96e" strokeWidth="1.3" fill="none" strokeLinecap="round"/>
+                    <circle cx="12" cy="13" r="2" fill="#c8a96e" opacity="0.4"/>
+                  </svg>
+                </div>
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '17px', color: 'var(--midnight)', marginBottom: '6px' }}>Pump-Out Calculator</div>
+                <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Find out when your septic tank needs pumping based on household size and tank capacity.</div>
+              </div>
+            </a>
+
+            {/* Tool Card 2: License Verifier */}
+            <a href="/tools/license-verifier" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--midnight)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 12 Q6 6 12 6 Q18 6 18 12 Q18 18 12 18 Q6 18 6 12Z" stroke="#c8a96e" strokeWidth="1.4" fill="none"/>
+                    <path d="M9 12 L11 14 L15 10" stroke="#c8a96e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '17px', color: 'var(--midnight)', marginBottom: '6px' }}>Verify Contractor License</div>
+                <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Check a contractor's license status, bond, and insurance directly from Washington L&I.</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* FOOTER */}
