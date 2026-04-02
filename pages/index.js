@@ -139,6 +139,51 @@ export default function Home() {
                 <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Check a contractor's license status, bond, and insurance directly from Washington L&I.</div>
               </div>
             </a>
+
+            {/* Tool Card 3: Compliance Checker */}
+            <a href="/tools/compliance-checker" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--midnight)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="12" width="16" height="8" rx="1.5" stroke="#c8a96e" strokeWidth="1.4"/>
+                    <path d="M4 12 L12 6 L20 12" stroke="#c8a96e" strokeWidth="1.4" strokeLinejoin="round" fill="none"/>
+                    <path d="M9 17 L11 19 L15 15" stroke="#c8a96e" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '17px', color: 'var(--midnight)', marginBottom: '6px' }}>Compliance Checker</div>
+                <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Verify your property has a compliant septic inspection for sale or transfer.</div>
+              </div>
+            </a>
+
+            {/* Tool Card 4: Risk Assessment */}
+            <a href="/tools/failure-risk-assessment" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--midnight)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 19 L8 10 L13 14 L20 6" stroke="#c8a96e" strokeWidth="1.4" strokeLinejoin="round" fill="none"/>
+                    <circle cx="12" cy="12" r="10" stroke="#c8a96e" strokeWidth="1.3" fill="none" opacity="0.4"/>
+                  </svg>
+                </div>
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '17px', color: 'var(--midnight)', marginBottom: '6px' }}>Risk Assessment</div>
+                <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Answer 8 questions to assess your septic system's failure risk.</div>
+              </div>
+            </a>
+
+            {/* Tool Card 5: County Requirements */}
+            <a href="/tools/county-requirements" style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--midnight)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '14px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 8 L19 8 L19 19 Q19 20 18 20 L6 20 Q5 20 5 19 Z" stroke="#c8a96e" strokeWidth="1.4" fill="none"/>
+                    <path d="M9 8 L9 5 Q9 4 10 4 L14 4 Q15 4 15 5 L15 8" stroke="#c8a96e" strokeWidth="1.3" fill="none"/>
+                    <line x1="9" y1="12" x2="15" y2="12" stroke="#c8a96e" strokeWidth="1.2"/>
+                    <line x1="9" y1="16" x2="15" y2="16" stroke="#c8a96e" strokeWidth="1.2"/>
+                  </svg>
+                </div>
+                <div style={{ fontFamily: 'Georgia, serif', fontSize: '17px', color: 'var(--midnight)', marginBottom: '6px' }}>County Requirements</div>
+                <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', lineHeight: 1.6 }}>Look up septic inspection requirements for any Washington county.</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
