@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import PumpCalculator from '../../components/PumpCalculator'
+import ToolWrapper from '../../components/ToolWrapper'
 
 export default function PumpCalculatorPage() {
   return (
@@ -72,7 +73,9 @@ export default function PumpCalculatorPage() {
       </div>
 
       {/* Tool */}
-      <PumpCalculator embedded={false} />
+      <ToolWrapper toolName="pump-calculator">
+        <PumpCalculator embedded={false} />
+      </ToolWrapper>
 
       {/* Why It Matters */}
       <div style={{ background: 'var(--white)', borderTop: '1px solid var(--birch)', padding: '48px 44px' }}>

@@ -1,3 +1,4 @@
+import ToolWrapper from '../../components/ToolWrapper'
 import Head from 'next/head'
 import CountyRequirements from '../../components/CountyRequirements'
 
@@ -37,7 +38,9 @@ export default function CountyRequirementsPage() {
         </div>
       </div>
 
-      <CountyRequirements embedded={false} />
+      <ToolWrapper toolName="county-requirements">
+        <CountyRequirements embedded={false} />
+      </ToolWrapper>
 
       <div style={{ background: 'var(--parchment)', borderTop: '1px solid var(--birch)', padding: '48px 44px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

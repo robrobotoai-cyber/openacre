@@ -1,3 +1,4 @@
+import ToolWrapper from '../../components/ToolWrapper'
 import Head from 'next/head'
 import ComplianceChecker from '../../components/ComplianceChecker'
 
@@ -37,7 +38,9 @@ export default function ComplianceCheckerPage() {
         </div>
       </div>
 
-      <ComplianceChecker embedded={false} />
+      <ToolWrapper toolName="compliance-checker">
+        <ComplianceChecker embedded={false} />
+      </ToolWrapper>
 
       <div style={{ background: 'var(--parchment)', borderTop: '1px solid var(--birch)', padding: '48px 44px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

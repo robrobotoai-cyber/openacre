@@ -1,3 +1,4 @@
+import ToolWrapper from '../../components/ToolWrapper'
 import Head from 'next/head'
 import LicenseVerifier from '../../components/LicenseVerifier'
 
@@ -72,7 +73,9 @@ export default function LicenseVerifierPage() {
       </div>
 
       {/* Tool Component */}
-      <LicenseVerifier embedded={false} />
+      <ToolWrapper toolName="license-verifier">
+        <LicenseVerifier embedded={false} />
+      </ToolWrapper>
 
       {/* How It Works */}
       <div style={{ background: 'var(--white)', borderTop: '1px solid var(--birch)', padding: '48px 44px' }}>
