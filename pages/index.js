@@ -109,7 +109,7 @@ export default function Home() {
             No signup required. Get instant answers to common septic questions, completely free.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
             {/* Tool Card 1: Pump Calculator */}
             <a href="/tools/pump-calculator" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--parchment)', border: '1px solid var(--birch)', borderRadius: '12px', padding: '24px', cursor: 'pointer', transition: 'all 0.15s', height: '100%' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--prairie)', boxShadow: '0 2px 12px rgba(155, 122, 66, 0.1)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { borderColor: 'var(--birch)', boxShadow: 'none' })}>
