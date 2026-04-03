@@ -59,6 +59,85 @@ export default function BlogPost({ post }) {
             </div>
           </div>
 
+          <style>{`
+            .blog-content h2 {
+              font-family: Georgia, serif;
+              font-size: 24px;
+              font-weight: normal;
+              color: var(--midnight);
+              margin-top: 48px;
+              margin-bottom: 16px;
+              line-height: 1.4;
+            }
+            .blog-content h3 {
+              font-family: Georgia, serif;
+              font-size: 18px;
+              font-weight: normal;
+              color: var(--midnight);
+              margin-top: 32px;
+              margin-bottom: 16px;
+            }
+            .blog-content h4 {
+              font-family: Georgia, serif;
+              font-size: 16px;
+              font-weight: 600;
+              color: var(--midnight);
+              margin-top: 24px;
+              margin-bottom: 12px;
+            }
+            .blog-content p {
+              margin-bottom: 20px;
+              line-height: 1.8;
+            }
+            .blog-content ul, .blog-content ol {
+              margin-left: 24px;
+              margin-bottom: 20px;
+            }
+            .blog-content li {
+              margin-bottom: 12px;
+              line-height: 1.7;
+            }
+            .blog-content a {
+              color: var(--prairie);
+              text-decoration: none;
+              border-bottom: 1px solid var(--prairie);
+            }
+            .blog-content a:hover {
+              opacity: 0.8;
+            }
+            .blog-content code {
+              background: var(--parchment);
+              padding: 2px 6px;
+              border-radius: 3px;
+              font-family: monospace;
+              font-size: 13px;
+            }
+            .blog-content blockquote {
+              border-left: 4px solid var(--prairie);
+              padding-left: 20px;
+              margin-left: 0;
+              margin-right: 0;
+              margin-bottom: 20px;
+              font-style: italic;
+              color: var(--slate);
+            }
+            .blog-content table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-bottom: 20px;
+              font-size: 14px;
+            }
+            .blog-content th, .blog-content td {
+              text-align: left;
+              padding: 12px;
+              border-bottom: 1px solid var(--birch);
+            }
+            .blog-content th {
+              font-weight: 600;
+              background: var(--parchment);
+            }
+          `}</style>
+
           <div style={{
             fontSize: '15px',
             color: 'var(--midnight)',
@@ -69,21 +148,7 @@ export default function BlogPost({ post }) {
             padding: '32px'
           }}>
             {/* Markdown content */}
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} style={{
-              '& h2': { fontFamily: 'Georgia, serif', fontSize: '22px', marginTop: '32px', marginBottom: '12px' },
-              '& h3': { fontFamily: 'Georgia, serif', fontSize: '18px', marginTop: '24px', marginBottom: '12px' },
-              '& h4': { fontFamily: 'Georgia, serif', fontSize: '16px', marginTop: '20px', marginBottom: '12px' },
-              '& p': { marginBottom: '16px' },
-              '& li': { marginBottom: '8px' },
-              '& ul': { marginLeft: '20px', marginBottom: '16px' },
-              '& ol': { marginLeft: '20px', marginBottom: '16px' },
-              '& table': { width: '100%', borderCollapse: 'collapse', marginBottom: '16px' },
-              '& th': { textAlign: 'left', padding: '8px', borderBottom: '1px solid var(--birch)', fontWeight: '600' },
-              '& td': { padding: '8px', borderBottom: '1px solid var(--birch)' },
-              '& code': { background: 'var(--parchment)', padding: '2px 6px', borderRadius: '3px', fontFamily: 'monospace', fontSize: '13px' },
-              '& blockquote': { borderLeft: '3px solid var(--prairie)', paddingLeft: '16px', marginLeft: '0', marginBottom: '16px', fontStyle: 'italic' },
-              '& a': { color: 'var(--prairie)', textDecoration: 'underline' }
-            }} />
+            <div className="blog-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </div>
         </article>
       </div>
