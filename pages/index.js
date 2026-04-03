@@ -39,7 +39,7 @@ export default function Home() {
           </svg>
           <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 'normal', color: 'var(--midnight)' }}>Open <span style={{ color: 'var(--prairie)' }}>Acre</span></span>
         </div>
-        <div style={{ display: 'flex', gap: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <a href="/blog" style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', textDecoration: 'none', cursor: 'pointer' }}>Blog</a>
           <button style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', background: 'none', border: 'none', cursor: 'pointer' }}>Are you a provider?</button>
           <button style={{ background: 'var(--prairie)', color: '#fff', fontFamily: 'system-ui, sans-serif', fontSize: '13px', fontWeight: 600, padding: '9px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>Get a free quote</button>
