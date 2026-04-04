@@ -82,7 +82,7 @@ export default async function handler(req, res) {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            from: 'onboarding@resend.dev',
+            from: 'hello@openacre.co',
             to: emailLower,
             subject: 'Welcome to Open Acre',
             html: `
