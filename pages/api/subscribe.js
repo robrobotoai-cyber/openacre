@@ -100,6 +100,9 @@ export default async function handler(req, res) {
                 Open Acre • Septic System Guides & Tools<br/>
                 <a href="https://openacre.co" style="color: #9b7a42; text-decoration: none;">openacre.co</a>
               </p>
+              <p style="font-size: 12px; color: #999; margin-top: 16px;">
+                <a href="https://openacre.co/api/unsubscribe?email=${encodeURIComponent(emailLower)}" style="color: #999; text-decoration: none;">Unsubscribe from this list</a>
+              </p>
             </div>
           `
         }
