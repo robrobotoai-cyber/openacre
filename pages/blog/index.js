@@ -111,7 +111,7 @@ export default function BlogIndex({ posts, categories }) {
                 Subscribe
               </button>
             </form>
-            {subscriptionStatus?.success && <p style={{ fontSize: '12px', color: 'var(--prairie)', marginTop: '8px' }}>✓ Thank you for subscribing!</p>}
+            {subscriptionStatus?.success && <p style={{ fontSize: '12px', color: 'var(--prairie)', marginTop: '8px' }}>✓ Thank you! Check your email for a welcome message.</p>}
             {subscriptionStatus?.error && <p style={{ fontSize: '12px', color: '#8b2e2e', marginTop: '8px' }}>✗ {subscriptionStatus.error}</p>}
           </div>
         </div>
