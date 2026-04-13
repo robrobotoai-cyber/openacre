@@ -1,12 +1,23 @@
 /**
  * API endpoint to capture tool usage by zip code
- * Stores data in a simple JSON log for now (can migrate to database later)
+ * Stores entries in Redis as a list keyed by tool name
  */
 
-import fs from 'fs'
-import path from 'path'
+import { createClient } from 'redis'
 
-const logPath = path.join(process.cwd(), 'data', 'tool-usage.jsonl')
+let redisClient = null
+
+async function getRedisClient() {
+  if (redisClient) return redisClient
+
+  const redisUrl = process.env.REDIS_URL
+  if (!redisUrl) throw new Error('REDIS_URL environment variable not configured')
+
+  redisClient = createClient({ url: redisUrl })
+  redisClient.on('error', (err) => console.error('Redis error:', err))
+  await redisClient.connect()
+  return redisClient
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -20,24 +31,24 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Ensure data directory exists
-    const dataDir = path.join(process.cwd(), 'data')
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true })
-    }
+    const client = await getRedisClient()
 
-    // Append to JSONL log (one entry per line)
     const entry = JSON.stringify({
-      zipCode: zipCode.substring(0, 5), // Sanitize
+      zipCode: zipCode.substring(0, 5),
       toolName,
       timestamp: timestamp || new Date().toISOString()
     })
 
-    fs.appendFileSync(logPath, entry + '\n')
+    // Append to a list per tool, and a global list
+    await Promise.all([
+      client.rPush(`tool-usage:${toolName}`, entry),
+      client.rPush('tool-usage:all', entry)
+    ])
 
     return res.status(200).json({ success: true })
   } catch (error) {
     console.error('Error tracking zip code:', error)
-    return res.status(500).json({ error: 'Failed to track usage' })
+    // Don't block the user — log and return success anyway
+    return res.status(200).json({ success: true, tracked: false })
   }
 }
