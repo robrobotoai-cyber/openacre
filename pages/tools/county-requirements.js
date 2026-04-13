@@ -26,7 +26,7 @@ export default function CountyRequirementsPage() {
         <div style={{ fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: 'var(--slate-light)' }}>Tools › <span style={{ color: 'var(--prairie)', fontWeight: 500 }}>County Requirements</span></div>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', background: 'none', border: 'none', cursor: 'pointer' }}>Are you a provider?</button>
-          <button style={{ background: 'var(--prairie)', color: '#fff', fontFamily: 'system-ui, sans-serif', fontSize: '13px', fontWeight: 600, padding: '9px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>Get a free quote</button>
+          <a href="/get-quote" style={{ background: 'var(--prairie)', color: '#fff', fontFamily: 'system-ui, sans-serif', fontSize: '13px', fontWeight: 600, padding: '9px 20px', borderRadius: '6px', textDecoration: 'none', display: 'inline-block' }}>Get a free quote</a>
         </div>
       </nav>
 

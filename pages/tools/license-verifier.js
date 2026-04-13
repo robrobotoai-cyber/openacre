@@ -53,7 +53,7 @@ export default function LicenseVerifierPage() {
         </div>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', color: 'var(--slate)', background: 'none' }}>Are you a provider?</button>
-          <button style={{ background: 'var(--prairie)', color: '#fff', fontFamily: 'system-ui, sans-serif', fontSize: '13px', fontWeight: 600, padding: '9px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer' }}>Get a free quote</button>
+          <a href="/get-quote" style={{ background: 'var(--prairie)', color: '#fff', fontFamily: 'system-ui, sans-serif', fontSize: '13px', fontWeight: 600, padding: '9px 20px', borderRadius: '6px', textDecoration: 'none', display: 'inline-block' }}>Get a free quote</a>
         </div>
       </nav>
 
