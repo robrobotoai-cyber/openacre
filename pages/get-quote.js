@@ -12,13 +12,14 @@ const JOB_TYPES = [
 ]
 
 export default function GetQuote() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', jobType: '', zip: '', notes: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', jobType: '', zip: '', notes: '', smsConsent: false })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    const { name, type, value, checked } = e.target
+    setForm({ ...form, [name]: type === 'checkbox' ? checked : value })
   }
 
   const handleSubmit = async (e) => {
@@ -26,6 +27,10 @@ export default function GetQuote() {
     setError('')
     if (!form.name || !form.email || !form.jobType || !form.zip) {
       setError('Please fill in all required fields.')
+      return
+    }
+    if (form.phone && !form.smsConsent) {
+      setError('Please confirm SMS consent or remove your phone number.')
       return
     }
     setLoading(true)
@@ -138,6 +143,24 @@ export default function GetQuote() {
                   style={{ width: '100%', padding: '10px 12px', border: '1px solid var(--birch)', borderRadius: '6px', fontSize: '14px', fontFamily: 'system-ui, sans-serif', boxSizing: 'border-box' }}
                 />
               </div>
+
+              {/* SMS consent (only required if phone is provided) */}
+              {form.phone && (
+                <div style={{ marginBottom: '18px', background: '#fafaf5', border: '1px solid var(--birch)', borderRadius: '6px', padding: '12px 14px' }}>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: 'var(--midnight)', lineHeight: 1.5, cursor: 'pointer' }}>
+                    <input
+                      type="checkbox"
+                      name="smsConsent"
+                      checked={form.smsConsent}
+                      onChange={handleChange}
+                      style={{ marginTop: '2px', flexShrink: 0 }}
+                    />
+                    <span>
+                      By checking this box, I agree to receive SMS messages from Open Acre (a service of Meridian Automation LLC) at the number provided, including appointment scheduling, job status updates, quote follow-ups, and support replies. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="/privacy" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Privacy Policy</a> and <a href="/terms" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Terms</a>.
+                    </span>
+                  </label>
+                </div>
+              )}
 
               {/* Job type */}
               <div style={{ marginBottom: '18px' }}>

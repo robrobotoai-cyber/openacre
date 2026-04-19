@@ -22,10 +22,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { name, email, phone, jobType, zip, notes, timestamp } = req.body
+  const { name, email, phone, jobType, zip, notes, timestamp, smsConsent } = req.body
 
   if (!name || !email || !jobType || !zip) {
     return res.status(400).json({ error: 'Missing required fields' })
+  }
+
+  // If phone provided, require explicit SMS consent (Twilio A2P 10DLC compliance)
+  if (phone && !smsConsent) {
+    return res.status(400).json({ error: 'SMS consent required when phone number is provided' })
   }
 
   const entry = {
@@ -36,7 +41,11 @@ export default async function handler(req, res) {
     zip,
     notes: notes || '',
     timestamp: timestamp || new Date().toISOString(),
-    status: 'new'
+    status: 'new',
+    smsConsent: phone ? Boolean(smsConsent) : false,
+    smsConsentAt: phone && smsConsent ? (timestamp || new Date().toISOString()) : null,
+    smsConsentIp: req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket?.remoteAddress || null,
+    smsConsentUserAgent: req.headers['user-agent'] || null
   }
 
   try {
@@ -74,6 +83,7 @@ export default async function handler(req, res) {
               <tr><td style="padding:8px;font-weight:bold">Job Type</td><td style="padding:8px">${jobType}</td></tr>
               <tr><td style="padding:8px;font-weight:bold">Zip Code</td><td style="padding:8px">${zip}</td></tr>
               <tr><td style="padding:8px;font-weight:bold">Notes</td><td style="padding:8px">${notes || '—'}</td></tr>
+              <tr><td style="padding:8px;font-weight:bold">SMS Consent</td><td style="padding:8px">${entry.smsConsent ? `YES @ ${entry.smsConsentAt}` : 'no'}</td></tr>
               <tr><td style="padding:8px;font-weight:bold">Submitted</td><td style="padding:8px">${entry.timestamp}</td></tr>
             </table>
           `,
