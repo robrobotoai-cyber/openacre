@@ -144,23 +144,21 @@ export default function GetQuote() {
                 />
               </div>
 
-              {/* SMS consent (only required if phone is provided) */}
-              {form.phone && (
-                <div style={{ marginBottom: '18px', background: '#fafaf5', border: '1px solid var(--birch)', borderRadius: '6px', padding: '12px 14px' }}>
-                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: 'var(--midnight)', lineHeight: 1.5, cursor: 'pointer' }}>
-                    <input
-                      type="checkbox"
-                      name="smsConsent"
-                      checked={form.smsConsent}
-                      onChange={handleChange}
-                      style={{ marginTop: '2px', flexShrink: 0 }}
-                    />
-                    <span>
-                      By checking this box, I agree to receive SMS messages from Open Acre (a service of Meridian Automation LLC) at the number provided, including appointment scheduling, job status updates, quote follow-ups, and support replies. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="/privacy" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Privacy Policy</a> and <a href="/terms" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Terms</a>.
-                    </span>
-                  </label>
-                </div>
-              )}
+              {/* SMS consent — always visible when phone field is shown */}
+              <div style={{ marginBottom: '18px', background: '#fafaf5', border: '1px solid var(--birch)', borderRadius: '6px', padding: '12px 14px' }}>
+                <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontFamily: 'system-ui, sans-serif', fontSize: '12px', color: 'var(--midnight)', lineHeight: 1.5, cursor: 'pointer' }}>
+                  <input
+                    type="checkbox"
+                    name="smsConsent"
+                    checked={form.smsConsent}
+                    onChange={handleChange}
+                    style={{ marginTop: '2px', flexShrink: 0 }}
+                  />
+                  <span>
+                    By checking this box, I agree to receive SMS messages from Open Acre (a service of Meridian Automation LLC) at the number provided, including appointment scheduling, job status updates, quote follow-ups, and support replies. Consent is not a condition of any purchase. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="/privacy" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Privacy Policy</a> and <a href="/terms" style={{ color: 'var(--prairie)', textDecoration: 'underline' }}>Terms</a>.
+                  </span>
+                </label>
+              </div>
 
               {/* Job type */}
               <div style={{ marginBottom: '18px' }}>

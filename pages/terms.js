@@ -48,11 +48,23 @@ export default function Terms() {
             <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 'normal', marginTop: '24px', marginBottom: '12px' }}>7. Modifications to Service</h2>
             <p>Open Acre reserves the right to modify or discontinue the service at any time, with or without notice.</p>
 
-            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 'normal', marginTop: '24px', marginBottom: '12px' }}>8. Contact</h2>
+            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 'normal', marginTop: '24px', marginBottom: '12px' }}>8. SMS / Text Messaging</h2>
+            <p>If you provide a phone number and opt in via our quote request form, Open Acre (a service of Meridian Automation LLC) may send you SMS messages related to your service request. By opting in you agree to the following:</p>
+            <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
+              <li><strong>Consent:</strong> SMS messages are sent only to users who have explicitly opted in via the web form at openacre.co/get-quote. Consent is not a condition of any purchase.</li>
+              <li><strong>Message types:</strong> Appointment scheduling, job status updates, quote follow-ups, and support replies.</li>
+              <li><strong>Frequency:</strong> Message frequency varies based on your request activity.</li>
+              <li><strong>Cost:</strong> Msg &amp; data rates may apply (charged by your mobile carrier).</li>
+              <li><strong>Opt-out:</strong> Reply STOP, STOPALL, UNSUBSCRIBE, CANCEL, END, or QUIT at any time to stop receiving messages. Reply HELP for assistance.</li>
+              <li><strong>No sharing:</strong> Your mobile number and consent records are not shared with third parties for marketing purposes.</li>
+              <li><strong>Sender:</strong> Messages originate from Open Acre (Meridian Automation LLC) via a Twilio-provisioned 10DLC number.</li>
+            </ul>
+
+            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 'normal', marginTop: '24px', marginBottom: '12px' }}>9. Contact</h2>
             <p>For questions about these terms, please contact us at hello@openacre.co.</p>
 
             <p style={{ marginTop: '32px', fontSize: '12px', color: 'var(--slate)', borderTop: '1px solid var(--birch)', paddingTop: '16px' }}>
-              Last updated: April 1, 2026
+              Last updated: April 30, 2026
             </p>
           </div>
         </div>
